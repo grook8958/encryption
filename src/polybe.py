@@ -25,13 +25,14 @@ def letter_code(char):
         for collumn in line:
             if (collumn == char):
                 return (str(TABLE.index(line)+1), str(TABLE[TABLE.index(line)].index(collumn)+1))
+    return char
 
 def encrypt(text=''):
     if len(text) <= 0:
         return None
     chars = [*text.upper()]
     code = []
-    for char in chars:
+    for char in chars:   
         code.append(''.join(letter_code(char)))
     return ' '.join(code)
 
