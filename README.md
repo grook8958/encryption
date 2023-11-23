@@ -11,4 +11,4 @@
 
 ## Dependencies
 
-Dearpygui is shipped with the program, if you do not wish to have it included, delete the `modules` folder and intall the required package via the command `pip install dearpygui`
+Dearpygui is required, intall the required package via the command `pip install dearpygui`
