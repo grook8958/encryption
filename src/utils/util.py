@@ -2,6 +2,7 @@ import subprocess
 import platform
 import dearpygui.dearpygui as dpg
 
+# Copy Text to Clipboard 
 def copy_to_clipboard(txt):
     if platform.system() == 'Windows':
         cmd='echo '+txt.strip()+'|clip'
@@ -9,10 +10,12 @@ def copy_to_clipboard(txt):
         cmd='echo '+txt.strip()+'|pbcopy'
     return subprocess.check_call(cmd, shell=True)
 
+# Enter debug mode
 def enter_debug(sender, app_data, user_data):
     dpg.hide_item('window_caesar')
     dpg.hide_item('window_rot13')
 
+# Switch between the different encryption windows
 def menu_switch(sender, app_data, user_data):
     active_window: str = user_data['active_window']
     selected_window = user_data['selected_window']
@@ -31,9 +34,7 @@ def menu_switch(sender, app_data, user_data):
         dpg.show_item(item=window_encrypt_item)
         dpg.hide_item(item=window_decrypt_item)
 
-
-    
-
+# Main Menu Bar
 def menu(active: str):
     with dpg.menu_bar():
         with dpg.menu(label="César"):

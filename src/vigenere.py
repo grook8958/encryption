@@ -1,10 +1,14 @@
+# Tableau de Chiffrement 
 __table = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+# Transforme le tableau en liste de charactère
 TABLE = [*__table]
 
+# Trouve l'index de la lettre dans le tableau
 def __resolveIndex(letter):
     return TABLE.index(letter.upper())
 
+# Chiffre en Vigenere avec une clé de chiffrement donné
 def encrypt(text, key):
     key = [*key]
     code = [*text]
@@ -16,7 +20,7 @@ def encrypt(text, key):
             j += 1
     return ''.join(code)
 
-
+# Déchiffre en Vigenere avec une clé de chiffrement donné
 def decrypt(code, key):
     key = [*key]
     text = [*code]

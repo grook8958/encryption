@@ -27,6 +27,7 @@ def letter_code(char):
                 return (str(TABLE.index(line)+1), str(TABLE[TABLE.index(line)].index(collumn)+1))
     return char
 
+# Chiffre avec le Carré de Polybe
 def encrypt(text=''):
     if len(text) <= 0:
         return None
@@ -36,6 +37,7 @@ def encrypt(text=''):
         code.append(''.join(letter_code(char)))
     return ' '.join(code)
 
+# Déchiffre avec le Carré de Polybe
 def decrypt(code=''):
     if len(code) <= 0:
         return None
