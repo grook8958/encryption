@@ -1,6 +1,8 @@
 import subprocess
 import platform
 import dearpygui.dearpygui as dpg
+import os
+import sys
 
 # Copy Text to Clipboard 
 def copy_to_clipboard(txt):
@@ -52,3 +54,9 @@ def menu(active: str):
         with dpg.menu(label="Settings"):
             dpg.add_menu_item(label="Debug", check=True, callback=enter_debug)
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
