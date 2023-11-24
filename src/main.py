@@ -4,7 +4,8 @@ import dearpygui.dearpygui as dpg
 dpg.create_context()
 
 # Main Imports
-from themes import font_registry, theme_registry
+from themes import font_registry
+from themes import theme_registry
 from assets import asset_registry
 import polybe as Polybe
 import vigenere as Vigenere
