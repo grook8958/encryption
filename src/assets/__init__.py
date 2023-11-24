@@ -1,0 +1,1 @@
+from assets.asset_registry import *
