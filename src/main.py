@@ -45,6 +45,13 @@ def btn_execute_callback(sender, app_data, user_data):
         elif action == 'decrypt':
             # Decrypt the entered text
             output_text = ROT13.decrypt(value)
+    if encryption == 'vigenere':
+        if action == 'encrypt':
+            # Encrypt the entered text
+            output_text = Vigenere.encrypt(value, dpg.get_value('vigenere_encrypt_key_text_input'))
+        elif action == 'decrypt':
+            # Decrypt the entered text
+            output_text = Vigenere.decrypt(value, dpg.get_value('vigenere_decrypt_key_text_input'))
     dpg.set_value(item=output, value=output_text)
     print(f'{encryption} Encryption/Decryption\nInput: {input}\nOutput: {output}\nAction: {action}\nValue: {value}\nOuput Text: {output_text}\n-----------')
 
@@ -197,6 +204,67 @@ with dpg.window(height=600, width=800, pos=(0,0), no_close=True, no_move=True, n
     # Menu Bar
     util.menu('window_caesar')
     
+# Vigenere Main Window
+with dpg.window(label="Chiffrement de Vigenere", height=600, width=800, pos=(0,0), tag='window_vigenere', show=False, no_close=True, no_move=True, no_resize=True, no_title_bar=True,):
+    dpg.bind_item_font(dpg.add_text('Chiffrement de Vigenere'), font_registry.header1_font)
+    dpg.add_text('\n')
+
+    # Encrypt Vigenere
+    with dpg.child_window(height=360,width=500, label='Chiffrer', no_scrollbar=True, no_scroll_with_mouse=True, show=True, tag='window_encrypt_vigenere'):
+        # Input
+        dpg.bind_item_font(dpg.add_text('Texte au Clair'), font_registry.default_font_bold)
+        encrypt_text_input = dpg.add_input_text(default_value='...', height=100, width=450, multiline=True, tag='encrypt_text_input_vigenere')
+        
+        # Encrypt, Switch Buttons & Encryption Key Input
+        with dpg.group(horizontal=True):
+            btn_encrypt_vigenere = dpg.add_button(label="Chiffrer", callback=btn_execute_callback)
+            dpg.add_input_text(default_value='Clé de Chiffrement', no_spaces=True, tag='vigenere_encrypt_key_text_input')
+            btn_switch_vigenere = dpg.add_button(label='Inverser', callback=btn_switch_callback, user_data=('vigenere','encrypt'))
+        dpg.add_text('\n')
+
+        # Output
+        dpg.bind_item_font(dpg.add_text('Texte Chiffré'), font_registry.default_font_bold)
+        encrypt_text_output = dpg.add_input_text(default_value="...", height=100, width=450, multiline=True, enabled=False, tag='encrypt_text_output_vigenere')
+        dpg.set_item_user_data(item=btn_encrypt_vigenere, user_data={'input': encrypt_text_input, 'output': encrypt_text_output, 'action': 'encrypt', 'encryption': 'vigenere'})
+        
+        # Copy to clipboard button
+        dpg.add_image_button(texture_tag=asset_registry.copy_clipboard, callback=btn_copy_callback, user_data=(encrypt_text_output, 'popup_copy_encrypt_vigenere'))
+        
+        # Copy to clipboard popup
+        with dpg.popup(dpg.last_item(), max_size=(-10, -25), tag='popup_copy_encrypt_vigenere'):
+            dpg.add_text("Copied", color=(0,255,0))
+
+    # Decrypt Vigenere
+    with dpg.child_window(height=360,width=500, label='Déchiffrer', no_scrollbar=True, no_scroll_with_mouse=True, show=False, tag='window_decrypt_vigenere'):
+        # Input
+        dpg.bind_item_font(dpg.add_text('Texte Chiffré'), font_registry.default_font_bold)
+        decrypt_text_input = dpg.add_input_text(default_value="...", height=100, width=450, multiline=True, tag='decrypt_text_input_vigenere')
+
+        # Decrypt & Switch buttons
+        with dpg.group(horizontal=True):
+            btn_decrypt_vigenere = dpg.add_button(label="Déchiffer", user_data='text', callback=btn_execute_callback)
+            dpg.add_input_text(default_value='Clé de Chiffrement...', no_spaces=True, tag='vigenere_decrypt_key_text_input')
+            btn_switch_vigenere = dpg.add_button(label='Inverser', callback=btn_switch_callback, user_data=('vigenere','decrypt'))
+        dpg.add_text('\n')
+
+        # Input
+        dpg.bind_item_font(dpg.add_text('Texte au Clair'), font_registry.default_font_bold)
+        decrypt_text_output = dpg.add_input_text(default_value="...", height=100, width=450, multiline=True, enabled=False, tag='decrypt_text_output_vigenere')
+        dpg.set_item_user_data(item=btn_decrypt_vigenere, user_data={'input': decrypt_text_input, 'output': decrypt_text_output, 'action': 'decrypt', 'encryption': 'vigenere'})
+
+        # Copy to Clipboard Button
+        dpg.add_image_button(texture_tag=asset_registry.copy_clipboard, callback=btn_copy_callback, user_data=(decrypt_text_output, 'popup_copy_decrypt_vigenere'))
+
+        # Copy to Clipboard Popup
+        with dpg.popup(dpg.last_item(), max_size=(-10, -25), tag='popup_copy_decrypt_vigenere'):
+            dpg.add_text("Copied", color=(0,255,0))
+
+        # Styles
+        dpg.bind_item_theme(btn_encrypt_vigenere, theme_registry.btn1_theme)
+        dpg.bind_item_theme(btn_decrypt_vigenere, theme_registry.btn1_theme)
+
+    # Menu Bar
+    util.menu('window_vigenere')
 
 # Debug      
 dpg.show_style_editor()
