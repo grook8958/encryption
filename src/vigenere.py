@@ -8,9 +8,17 @@ TABLE = [*__table]
 def __resolveIndex(letter):
     return TABLE.index(letter.upper())
 
+# Enleve tout charactère de la clé d'encryption non-pris en charge
+def __validateKey(key):
+    k = []
+    for char in key:
+        if char in TABLE:
+            k.append(char)
+    return k
+
 # Chiffre en Vigenere avec une clé de chiffrement donné
 def encrypt(text, key):
-    key = [*key]
+    key = __validateKey(key)
     code = [*text]
     j = 0
     for i in range(len(code)):
