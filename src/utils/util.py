@@ -47,7 +47,7 @@ def menu(active: str):
             dpg.add_menu_item(label='Déchiffré', callback=menu_switch, user_data={'active_window': active, 'selected_window': 'window_rot13', 'action': 'decrypt'})
         with dpg.menu(label="Vigenere"):
             dpg.add_menu_item(label='Chiffré', callback=menu_switch, user_data={'active_window': active, 'selected_window': 'window_vigenere', 'action': 'encrypt'})
-            dpg.add_menu_item(label='Déchiffré', callback=menu_switch, user_data={'active_window': active, 'selected_window': 'window_vignere', 'action': 'decrypt'})
+            dpg.add_menu_item(label='Déchiffré', callback=menu_switch, user_data={'active_window': active, 'selected_window': 'window_vigenere', 'action': 'decrypt'})
         with dpg.menu(label="Carré de Polybe"):
             dpg.add_menu_item(label='Chiffré', callback=menu_switch, user_data={'active_window': active, 'selected_window': 'window_polybe', 'action': 'encrypt'})
             dpg.add_menu_item(label='Déchiffré', callback=menu_switch, user_data={'active_window': active, 'selected_window': 'window_polybe', 'action': 'decrypt'})
