@@ -30,7 +30,7 @@ def encrypt(text, key):
 
 # Déchiffre en Vigenere avec une clé de chiffrement donné
 def decrypt(code, key):
-    key = [*key]
+    key = __validateKey(key)
     text = [*code]
     j = 0
     for i in range(len(text)):
