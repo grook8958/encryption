@@ -1,0 +1,74 @@
+{
+    "en_US": {
+        "name": "English (USA)",
+
+        "plaintext": "Plaintext",
+        "encrypted_text": "Encrypted Text",
+        "encrypt_action": "Encrypt",
+        "decrypt_action": "Decrypt",
+        "switch_action": "Switch",
+        "encryption_key": "Encryption Key",
+
+        "caesar_name": "Caesar",
+        "rot13_name": "ROT13",
+        "vigenere_name": "Vigen\u00E8re",
+        "polybe_name": "Polybius Square",
+        "settings_name": "Settings",
+        "language_name": "Language",
+
+        "caesar_encryption_title": "Caesar Encryption",
+        "rot13_encryption_title": "ROT13 Encryption",
+        "vigenere_encryption_title": "Vigen\u00E8re Cipher",
+        "polybe_encryption_title": "Polybius Square",
+        
+        "popup_copied": "Copied!"
+    },
+    "en_GB": {
+        "name": "English (UK)",
+
+        "plaintext": "Plaintext",
+        "encrypted_text": "Encrypted Text",
+        "encrypt_action": "Encrypt",
+        "decrypt_action": "Decrypt",
+        "switch_action": "Switch",
+        "encryption_key": "Encryption Key",
+
+        "caesar_name": "Caesar",
+        "rot13_name": "ROT13",
+        "vigenere_name": "Vigen\u00E8re",
+        "polybe_name": "Polybius Square",
+        "settings_name": "Settings",
+        "language_name": "Language",
+
+        "caesar_encryption_title": "Caesar Encryption",
+        "rot13_encryption_title": "ROT13 Encryption",
+        "vigenere_encryption_title": "Vigen\u00E8re Cipher",
+        "polybe_encryption_title": "Polybius Square",
+        
+        "popup_copied": "Copied!"
+    },
+    "fr": {
+        "name": "Fran\u00e7ais",
+
+        "plaintext": "Texte au Clair",
+        "encrypted_text": "Texte Chiffr\u00E9",
+        "encrypt_action": "Chiffrer",
+        "decrypt_action": "D\u00E9chiffrer",
+        "switch_action": "Inverser",
+        "encryption_key": "Cl\u00E9 de Chiffrement",
+
+        "caesar_name": "C\u00E9sar",
+        "rot13_name": "ROT13",
+        "vigenere_name": "Vigen\u00E8re",
+        "polybe_name": "Carr\u00E9 de Polybe",
+        "settings_name": "Param\u00E8tres",
+        "language_name": "Langue",
+
+        "caesar_encryption_title": "Chiffrement C\u00E9sar",
+        "rot13_encryption_title": "Chiffrement ROT13",
+        "vigenere_encryption_title": "Chiffre de Vigen\u00E8re",
+        "polybe_encryption_title": "Carr\u00E9 de Polybe",
+
+        "popup_copied": "Copi\u00E9!"
+    }
+}
