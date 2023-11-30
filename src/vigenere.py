@@ -12,7 +12,7 @@ def __resolveIndex(letter):
 def __validateKey(key):
     k = []
     for char in key:
-        if char in TABLE:
+        if char.upper() in TABLE:
             k.append(char)
     return k
 
