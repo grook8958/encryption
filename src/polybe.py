@@ -47,7 +47,7 @@ def decrypt(code=''):
         C = __resolveCode(code)
     chars = []
     for code in C:
-        chars.append(TABLE[int(code[0])-1][int(code[1])-1].lower())
+        chars.append(TABLE[int(code[0])-1][int(code[1])-1].upper())
     return ''.join(chars)
 
 # Renvoie le code chiffré par doublets de chiffres
