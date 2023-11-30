@@ -103,7 +103,7 @@ def changeLanguage(lang_code):
         setLabel(f'window_caesar_menubar_title_{encryption}', lang[f'{encryption}_name'])
         setLabel(f'window_rot13_menubar_title_{encryption}', lang[f'{encryption}_name'])
         setLabel(f'window_vigenere_menubar_title_{encryption}', lang[f'{encryption}_name'])
-        #setLabel(f'window_polybe_menubar_title_{encryption}')
+        setLabel(f'window_polybe_menubar_title_{encryption}', lang[f'{encryption}_name'])
 
         # Change the Language of the Menu Bar Sub-Items
         setLabel(f'window_caesar_menubar_option_encrypt_{encryption}', lang['encrypt_action'])
@@ -115,8 +115,8 @@ def changeLanguage(lang_code):
         setLabel(f'window_vigenere_menubar_option_encrypt_{encryption}', lang['encrypt_action'])
         setLabel(f'window_vigenere_menubar_option_decrypt_{encryption}', lang['decrypt_action'])
         
-        #setLabel(f'window_polybe_menubar_option_encrypt_{encryption}', lang['encrypt_action'])
-        #setLabel(f'window_polybe_menubar_option_decrypt_{encryption}', lang['decrypt_action'])
+        setLabel(f'window_polybe_menubar_option_encrypt_{encryption}', lang['encrypt_action'])
+        setLabel(f'window_polybe_menubar_option_decrypt_{encryption}', lang['decrypt_action'])
 
 
         if not encryption == 'polybe': # -> remove this once polybe encrytpion is implemented
