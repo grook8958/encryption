@@ -1,9 +1,9 @@
-import spacing
+import shift
 
 # Encrypt Caesar
 def encrypt(text):
-    return spacing.encrypt(text, 3)
+    return shift.encrypt(text, 3)
 
 # Decrypt Caesar
 def decrypt(code):
-    return spacing.decrypt(code, 3)
+    return shift.decrypt(code, 3)
