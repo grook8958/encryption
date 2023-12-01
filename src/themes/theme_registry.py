@@ -4,6 +4,7 @@ import dearpygui.dearpygui as dpg
 with dpg.theme() as global_theme:
     with dpg.theme_component(dpg.mvAll):
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 5, category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_MenuBarBg, (59, 59, 64, 255), category=dpg.mvThemeCat_Core)
 
 # Register the btn1_theme
 with dpg.theme() as btn1_theme:
