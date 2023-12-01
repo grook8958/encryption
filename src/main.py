@@ -16,11 +16,12 @@ import time
 
 # Create DPG Viewport
 dpg.create_viewport(title='Chiffrement', width=800, height=600, clear_color=(0, 0, 0, 255))
+dpg.set_viewport_large_icon(util.resource_path('src/assets/icon.ico'))
+dpg.set_viewport_small_icon(util.resource_path('src/assets/icon.ico'))
 
 # Set Theme & Fonts
 dpg.bind_font(font_registry.default_font)
 dpg.bind_theme(theme_registry.global_theme)
-
 
 # Callback for encrypt/decrypt buttons
 def btn_execute_callback(sender, app_data, user_data):
