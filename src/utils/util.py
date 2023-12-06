@@ -119,34 +119,33 @@ def changeLanguage(lang_code):
         setLabel(f'window_polybe_menubar_option_decrypt_{encryption}', lang['decrypt_action'])
 
 
-        if not encryption == 'polybe': # -> remove this once polybe encrytpion is implemented
-            setLabel(f'window_{encryption}_menubar_title_settings', lang['settings_name'])
-            setLabel(f'window_{encryption}_menubar_title_settings_language', lang['language_name'])
+        setLabel(f'window_{encryption}_menubar_title_settings_language', lang['language_name'])
+        setLabel(f'window_{encryption}_menubar_title_settings', lang['settings_name'])
 
-            # Change the Language of the "Encrypted Text" text
-            setValue(f'encrypted_text_encrypt_{encryption}', lang['encrypted_text'])
-            setValue(f'encrypted_text_decrypt_{encryption}', lang['encrypted_text'])
+        # Change the Language of the "Encrypted Text" text
+        setValue(f'encrypted_text_encrypt_{encryption}', lang['encrypted_text'])
+        setValue(f'encrypted_text_decrypt_{encryption}', lang['encrypted_text'])
 
-            # Change the Language of the "Plain Text" text
-            setValue(f'plaintext_encrypt_{encryption}', lang['plaintext'])
-            setValue(f'plaintext_decrypt_{encryption}', lang['plaintext'])
+        # Change the Language of the "Plain Text" text
+        setValue(f'plaintext_encrypt_{encryption}', lang['plaintext'])
+        setValue(f'plaintext_decrypt_{encryption}', lang['plaintext'])
 
-            # Change the Language of the different encryption titles
-            setValue(f'{encryption}_encryption_title', lang[f'{encryption}_encryption_title'])
+        # Change the Language of the different encryption titles
+        setValue(f'{encryption}_encryption_title', lang[f'{encryption}_encryption_title'])
 
-            # Change the Language of the different buttons
-            setLabel(f'btn_encrypt_{encryption}', lang['encrypt_action'])
-            setLabel(f'btn_decrypt_{encryption}', lang['decrypt_action'])
-            setLabel(f'btn_switch_encrypt_{encryption}', lang['switch_action'])
-            setLabel(f'btn_switch_decrypt_{encryption}', lang['switch_action'])
+        # Change the Language of the different buttons
+        setLabel(f'btn_encrypt_{encryption}', lang['encrypt_action'])
+        setLabel(f'btn_decrypt_{encryption}', lang['decrypt_action'])
+        setLabel(f'btn_switch_encrypt_{encryption}', lang['switch_action'])
+        setLabel(f'btn_switch_decrypt_{encryption}', lang['switch_action'])
 
-            # Change the Language of the encryption key input
-            setValue('vigenere_encrypt_key_text_input', f'{lang["encryption_key"]}...')
-            setValue('vigenere_decrypt_key_text_input', f'{lang["encryption_key"]}...')
+        # Change the Language of the encryption key input
+        setValue('vigenere_encrypt_key_text_input', f'{lang["encryption_key"]}...')
+        setValue('vigenere_decrypt_key_text_input', f'{lang["encryption_key"]}...')
 
-            # Change the Language of the copy popup
-            setValue(f'text_popup_copy_encrypt_{encryption}', lang['popup_copied'])
-            setValue(f'text_popup_copy_decrypt_{encryption}', lang['popup_copied'])
+        # Change the Language of the copy popup
+        setValue(f'text_popup_copy_encrypt_{encryption}', lang['popup_copied'])
+        setValue(f'text_popup_copy_decrypt_{encryption}', lang['popup_copied'])
     saveSetting('language', lang_code)
     
     
