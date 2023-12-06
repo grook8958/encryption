@@ -15,7 +15,7 @@ from utils import util
 import time
 
 # Create DPG Viewport
-dpg.create_viewport(title='Chiffrement', width=800, height=600, clear_color=(0, 0, 0, 255))
+dpg.create_viewport(title='Cryptages', width=800, height=600, clear_color=(0, 0, 0, 255))
 dpg.set_viewport_large_icon(util.resource_path('src/assets/icon.ico'))
 dpg.set_viewport_small_icon(util.resource_path('src/assets/icon.ico'))
 
