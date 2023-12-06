@@ -8,7 +8,7 @@
 - Interface graphique pour chiffrer/déchiffrer
 
 
-## Dependencies
+## Librairies
 
 La librairie dearpygui est nécessaire au bon fonctionnement du programme, installer la avec la commande: `pip install dearpygui`
 <br><br>
