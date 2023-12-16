@@ -102,7 +102,7 @@ def init():
     util.changeLanguage(lang)
 
     # Set the correct window
-    util.menu_switch(sender=None, app_data=None, user_data={'active_window': 'window_caesar', 'selected_window': f'window_{window}', 'action': 'encrypt'})
+    util.menu_switch(sender=None, app_data=None, user_data={'active_window': f'window_{window}', 'selected_window': f'window_{window}', 'action': 'encrypt'})
 
 # ROT13 Main Window
 with dpg.window(label="Chiffrement ROT13", height=600, width=800, pos=(0,0), tag='window_rot13', show=False, no_close=True, no_move=True, no_resize=True, no_title_bar=True,):
@@ -166,7 +166,7 @@ with dpg.window(label="Chiffrement ROT13", height=600, width=800, pos=(0,0), tag
 
     
 # Caesar Main Window
-with dpg.window(height=600, width=800, pos=(0,0), no_close=True, no_move=True, no_resize=True, no_title_bar=True, tag='window_caesar'):
+with dpg.window(height=600, width=800, pos=(0,0), show=False, no_close=True, no_move=True, no_resize=True, no_title_bar=True, tag='window_caesar'):
     dpg.bind_item_font(dpg.add_text('Chiffrement César', tag='caesar_encryption_title'), font=font_registry.header1_font)
     dpg.add_text('\n')
 
@@ -288,7 +288,7 @@ with dpg.window(label="Chiffrement de Vigenere", height=600, width=800, pos=(0,0
     util.menu('window_vigenere')
 
 # Polybe Main Window
-with dpg.window(height=600, width=800, pos=(0,0), no_close=True, no_move=True, no_resize=True, no_title_bar=True, tag='window_polybe'):
+with dpg.window(height=600, width=800, pos=(0,0), show=False, no_close=True, no_move=True, no_resize=True, no_title_bar=True, tag='window_polybe'):
     dpg.bind_item_font(dpg.add_text('Chiffrement Polybe', tag='polybe_encryption_title'), font=font_registry.header1_font)
     dpg.add_text('\n')
 
