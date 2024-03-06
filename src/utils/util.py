@@ -6,6 +6,7 @@ import sys
 import json
 import configparser
 from themes import theme_registry
+from typing import Union
 
 
 # [{name, value}]
@@ -87,10 +88,10 @@ def menu_switch(sender, app_data, user_data):
         dpg.hide_item(item=window_decrypt_item)
     
 
-def setValue(item: str|int, text: str):
+def setValue(item: Union[str, int], text: str):
     return dpg.set_value(item, text)
 
-def setLabel(item: str|int, text: str):
+def setLabel(item: Union[str, int], text: str):
     return dpg.set_item_label(item, text)
 
 def changeLanguage(lang_code):
