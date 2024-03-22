@@ -14,7 +14,8 @@ def encrypt(text, shift):
     for i in range(len(code)):
         if code[i].upper() in TABLE:
             x = (__resolveIndex(code[i])+shift)%26
-            code[i] = TABLE[x]
+            if code[i].isupper(): code[i] = TABLE[x]
+            else: code[i] = TABLE[x].lower()  
     return ''.join(code)
 
 # Déchiffre en décalant chaque lettre n rangs
@@ -23,5 +24,6 @@ def decrypt(code, shift):
     for i in range(len(text)):
         if text[i].upper() in TABLE:
             x = (__resolveIndex(text[i])-shift)%26
-            text[i] = TABLE[x]
+            if code[i].isupper(): code[i] = TABLE[x]
+            else: code[i] = TABLE[x].lower()    
     return ''.join(text)
