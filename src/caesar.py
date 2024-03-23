@@ -1,9 +1,9 @@
 import shift
 
 # Encrypt Caesar
-def encrypt(text):
-    return shift.encrypt(text, 3)
+def encrypt(text, key):
+    return shift.encrypt(text, len(key))
 
 # Decrypt Caesar
-def decrypt(code):
-    return shift.decrypt(code, 3)
+def decrypt(code, key):
+    return shift.decrypt(code, len(key))

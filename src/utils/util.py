@@ -143,6 +143,9 @@ def changeLanguage(lang_code):
         # Change the Language of the encryption key input
         setValue('vigenere_encrypt_key_text_input', f'{lang["encryption_key"]}...')
         setValue('vigenere_decrypt_key_text_input', f'{lang["encryption_key"]}...')
+        setValue('caesar_encrypt_key_text_input', f'{lang["encryption_key"]}...')
+        setValue('caesar_decrypt_key_text_input', f'{lang["encryption_key"]}...')
+        
 
         # Change the Language of the copy popup
         setValue(f'text_popup_copy_encrypt_{encryption}', lang['popup_copied'])

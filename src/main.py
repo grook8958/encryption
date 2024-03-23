@@ -35,10 +35,10 @@ def btn_execute_callback(sender, app_data, user_data):
     if encryption == 'caesar':
         if action == 'encrypt':
             # Encrypt the entered text
-            output_text = Caesar.encrypt(value)
+            output_text = Caesar.encrypt(value, dpg.get_value('caesar_encrypt_key_text_input'))
         elif action == 'decrypt':
             # Decrypt the entered text
-            output_text = Caesar.decrypt(value)
+            output_text = Caesar.decrypt(value, dpg.get_value('caesar_decrypt_key_text_input'))
     if encryption == 'rot13':
         if action == 'encrypt':
             # Encrypt the entered text
@@ -179,6 +179,7 @@ with dpg.window(height=600, width=800, pos=(0,0), show=False, no_close=True, no_
         # Encrypt & Switch Button
         with dpg.group(horizontal=True):
             btn_encrypt_caesar = dpg.add_button(label="Chiffrer", callback=btn_execute_callback, tag='btn_encrypt_caesar')
+            dpg.add_input_text(default_value='Clé de Chiffrement', no_spaces=True, tag='caesar_encrypt_key_text_input')
             btn_switch_caesar = dpg.add_button(label='Inversé', callback=btn_switch_callback, user_data=('caesar','encrypt'), tag='btn_switch_encrypt_caesar')
         dpg.add_text('\n')
 
@@ -203,6 +204,7 @@ with dpg.window(height=600, width=800, pos=(0,0), show=False, no_close=True, no_
         # Decrypt & Switch Button
         with dpg.group(horizontal=True):
             btn_decrypt_caesar = dpg.add_button(label="Déchiffer", user_data='text', callback=btn_execute_callback, tag='btn_decrypt_caesar')
+            dpg.add_input_text(default_value='Clé de Chiffrement', no_spaces=True, tag='caesar_decrypt_key_text_input')
             btn_switch_caesar = dpg.add_button(label='Inversé', callback=btn_switch_callback, user_data=('caesar','decrypt'), tag='btn_switch_decrypt_caesar')
         dpg.add_text('\n')
 
