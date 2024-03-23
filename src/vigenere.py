@@ -25,7 +25,7 @@ def encrypt(text, key):
         if code[i].upper() in TABLE:
             x = (__resolveIndex(code[i])+__resolveIndex(key[j%len(key)]))%26
             if code[i].isupper(): code[i] = TABLE[x]
-            else: code[i] = TABLE[x].lower()    
+            else: code[i] = TABLE[x].lower()
             j += 1
     return ''.join(code)
 
@@ -38,6 +38,6 @@ def decrypt(code, key):
         if text[i].upper() in TABLE:
             x = (__resolveIndex(text[i])-__resolveIndex(key[j%len(key)]))%26
             if code[i].isupper(): code[i] = TABLE[x]
-            else: code[i] = TABLE[x].lower()    
+            else: code[i] = TABLE[x].lower()
             j += 1
     return ''.join(text)
