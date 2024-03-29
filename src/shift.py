@@ -24,6 +24,6 @@ def decrypt(code, shift):
     for i in range(len(text)):
         if text[i].upper() in TABLE:
             x = (__resolveIndex(text[i])+shift)%26
-            if code[i].isupper(): code[i] = TABLE[x]
-            else: code[i] = TABLE[x].lower()
+            if text[i].isupper(): text[i] = TABLE[x]
+            else: text[i] = TABLE[x].lower()
     return ''.join(text)
