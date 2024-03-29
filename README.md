@@ -15,11 +15,11 @@ La librairie dearpygui est nécessaire au bon fonctionnement du programme, insta
 
 ## Utilisation
 
-Windows:
-Dans le repertoire "crytpages" executé la commande: `./start.vbs` ou double clicker le fichier "start.vbs"
+**Windows**:
+Dans le repertoire "encryption" executé la commande: `./start.vbs` ou double clicker le fichier "start.vbs"
 
-MacOS/Linux:
-Dans le repertoire "crytpages" executé la commande: `./start.bat` 
+**MacOS/Linux**:
+Dans le repertoire "encryption" executé la commande: `./start.bat` dans un terminal
 
 ### Executable
 
@@ -39,7 +39,14 @@ Pour utiliser le programme sous forme d'éxécutable, télécharger la dernière
 - GUI for encryption/decryption
 - English/French Translations
 
-**NOTICE**: This piece of software is still in its early development stage, bugs are expected.
+## Usage
+
+**Windows**:
+In the "encryption" directory execute: `./start.vbs` ou double click the "start.vbs" file
+
+**MacOS/Linux**:
+In the "encryption" directory execute: `./start.bat` in a command prompt
+
 
 ## Dependencies
 
